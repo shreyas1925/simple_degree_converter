@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weight Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Langar&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <style type="text/css">
+    * {
+      padding: 0px;
+      margin: 0px;
+      font-family: "Langar", cursive;
+    }
+  
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 mx-auto mt-5">
+          <h1 class="text-center ">Temperature </h1>
+          <form>
+            <div class="form-group">
+              <input
+                type="number"
+                placeholder="Enter the temperature in Degree Celsius "
+                id="lbinput"
+                class="form-control"
+                autocomplete="off"
+              />
+            </div>
+
+            <div id="output" class="tx">
+              <div class="card">
+                <div class="card-body bg-info ">
+                  Temperature in Fahrenheit
+                  <div id="faren"></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body bg-warning">
+                    Temperature in Kelvin
+                  <div id="kelvin"></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+       
+
+
+
+     <script>
+         document.getElementById("output").style.visibility="hidden";
+         document.getElementById("lbinput").addEventListener("input",(item)=>{
+         
+          document.getElementById("output").style.visibility="visible";
+          let deg = item.target.value;
+          document.getElementById("faren").innerHTML=(deg * 1.8) + 32;
+          document.getElementById("kelvin").innerHTML=(deg + 273.15);
+
+
+
+
+         });
+
+   </script>
+    </body>
+    </html>
